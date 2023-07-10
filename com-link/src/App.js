@@ -1,11 +1,20 @@
 import './App.css';
-import NavBar from './components/nav-bar';
+import {Routes, Route, Navigate } from 'react-router-dom';
+import NoPage from './pages/no-page'
+import Home from './pages/home'
+import Login from './pages/login';
+
 
 function App() {
   return (
-    <div className="home-container">
-      <div className='home-nav-container'><NavBar></NavBar></div>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="*" element={<NoPage/>}/>
+      </Routes>
+    </>
   );
 }
 
